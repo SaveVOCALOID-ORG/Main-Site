@@ -1,48 +1,5 @@
 <!doctype html>
 <html lang="zh-CN" class="mdui-theme-auto">
-<<<<<<< HEAD
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-    <meta name="renderer" content="webkit"/>
-    <meta name="description" content="Save VOCALOID songs on the Internet!"/>
-    <link rel="stylesheet" href="/css/mdui.css">
-    <script src="/js/mdui.global.js"></script>
-    <title>SaveVOCALOID.ORG</title>
-  </head>
-  <body>
-    <br><br><br><br><br><br>
-    <center>
-        <h1>SaveVOCALOID.ORG</h1>
-        <p>Under construction...</p>
-        <p><span id="days">--</span>d <span id="hours">--</span>h <span id="mins">--</span>m <span id="secs">--</span>s</p>
-    </center>
-    <br><br><br><br><br><br><br><br><br>
-    <p style="color: gray; text-align: center;">
-This site is not affiliated with YAMAHA Co., Ltd or Crypton Future Media, INC.<br>
-This site is a project initiated by the VOCALOID community.<br>
-VOCALOID&reg; is a trademark of YAMAHA.<br>
-    </p>
-    <script>
-        const RELEASE = 1722168000;
-        mdui.setColorScheme("#39C5BB");
-        getTimeStamp = () => {return Math.floor(Date.now()/1000)}
-        function updateTime(){
-            let time = RELEASE - getTimeStamp()
-            let days = parseInt(time/86400)
-            let hours = parseInt((time%86400)/3600)
-            let mins = parseInt(((time%86400)%3600)/60)
-            let secs = parseInt(((time%86400)%3600)%60)
-            mdui.$("#days")[0].innerText=days
-            mdui.$("#hours")[0].innerText=hours
-            mdui.$("#mins")[0].innerText=mins
-            mdui.$("#secs")[0].innerText=secs
-        }
-        updateTime()
-        setInterval(updateTime, 10)
-    </script>
-  </body>
-=======
 
 <head>
   <meta charset="UTF-8">
@@ -192,5 +149,4 @@ VOCALOID&reg; is a trademark of YAMAHA.<br>
 
 </body>
 
->>>>>>> main
 </html>
