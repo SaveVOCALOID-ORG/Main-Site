@@ -1,44 +1,97 @@
 <!doctype html>
 <html lang="zh-CN" class="mdui-theme-auto">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
-    <meta name="renderer" content="webkit"/>
-    <meta name="description" content="Save VOCALOID songs on the Internet!"/>
-    <link rel="stylesheet" href="/css/mdui.css">
-    <script src="/js/mdui.global.js"></script>
-    <title>SaveVOCALOID.ORG</title>
-  </head>
-  <body>
-    <br><br><br><br><br><br>
-    <center>
-        <h1>SaveVOCALOID.ORG</h1>
-        <p>Under construction...</p>
-        <p><span id="days">--</span>d <span id="hours">--</span>h <span id="mins">--</span>m <span id="secs">--</span>s</p>
-    </center>
-    <br><br><br><br><br><br><br><br><br>
-    <p style="color: gray; text-align: center;">
-This site is not affiliated with YAMAHA Co., Ltd or Crypton Future Media, INC.<br>
-This site is a project initiated by the VOCALOID community.<br>
-VOCALOID&reg; is a trademark of YAMAHA.<br>
-    </p>
-    <script>
-        const RELEASE = 1722168000;
-        mdui.setColorScheme("#39C5BB");
-        getTimeStamp = () => {return Math.floor(Date.now()/1000)}
-        function updateTime(){
-            let time = RELEASE - getTimeStamp()
-            let days = parseInt(time/86400)
-            let hours = parseInt((time%86400)/3600)
-            let mins = parseInt(((time%86400)%3600)/60)
-            let secs = parseInt(((time%86400)%3600)%60)
-            mdui.$("#days")[0].innerText=days
-            mdui.$("#hours")[0].innerText=hours
-            mdui.$("#mins")[0].innerText=mins
-            mdui.$("#secs")[0].innerText=secs
-        }
-        updateTime()
-        setInterval(updateTime, 10)
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" />
+  <meta name="renderer" content="webkit" />
+  <meta name="description" content="Save VOCALOID songs on the Internet!" />
+  <link rel="stylesheet" href="/css/mdui.css">
+  <link rel="stylesheet" href="/fonts/material-icons.css">
+  <script src="/js/mdui.global.js"></script>
+  <title>SaveVOCALOID.ORG</title>
+</head>
+
+<body>
+  <mdui-top-app-bar>
+    <mdui-button-icon icon="menu" onclick="showInfo()"></mdui-button-icon>
+    <mdui-top-app-bar-title>SaveVOCALOID.ORG</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="library_books" onclick="toDocsSite()"></mdui-button-icon>
+  </mdui-top-app-bar>
+  <br><br>
+  <center>
+    <div class="mdui-prose">
+      <h1>SaveVOCALOID.ORG</h1>
+      <mdui-button onclick='toDocsSite()'>
+        阅读文档
+        <mdui-icon slot="icon" name="library_books"></mdui-icon>
+        <mdui-icon slot="end-icon" name="arrow_forward"></mdui-icon></mdui-button>
+    </div>
+  </center>
+  <br><br>
+  <mdui-divider></mdui-divider>
+  <br><br>
+  <div class="mdui-prose cards">
+    <!--Cards here-->
+    <mdui-card variant="filled" style="width: 95%; height: auto; margin-left: 2.5%;">
+        <br>
+        <center>
+          <h2>什么是 SaveVOCALOID.ORG?</h2>
+        </center>
+        <br>
+        <div style="padding-left:2%; padding-right: 2%; padding-bottom: 2%; text-indent: 2em;">
+          <p>SaveVOCALOID.ORG 是一个由 VOCALOID 社区发起的项目。</p>
+          <p>最近，在国内的网站和平台上，VOCALOID 作品大量地被删除或隐藏。此外，VOCALOID 圈子也出现了过于低龄化等令人担忧的现象。</p>
+          <p>我们希望能够尽一份微薄之力，应对 VOCALOID 社区所面临的问题。例如：对 VOCALOID 作品进行存档，以免 P 主和爱好者们的心血毁于网络平台不合理的政策；对 VOCALOID 文化进行适当的科普，以免新人被错误的信息误导。</p>
+          <!--Thanks to 4n0n4me, for such great texts: @gh/xjzh123-->
+        </div>
+        <br>
+    </mdui-card>
+  </div>
+  <br><br><br>
+  <mdui-divider></mdui-divider><br><br>
+  <p style="color: gray; text-align: center;">
+    This site is not affiliated with YAMAHA Co., Ltd or Crypton Future Media, INC.<br>
+    This site is a project initiated by the VOCALOID community.<br>
+    VOCALOID&reg; is a trademark of YAMAHA.<br><br>
+    此站点与 YAMAHA Co., Ltd 或 Crypton Future Media, INC. 无关。<br>
+    此项目是由 VOCALOID 社区发起的。<br>
+    VOCALOID&reg; 是 YAMAHA 的商标。<br>
+  </p>
+  <mdui-snackbar class="loading-snackbar">Loading...</mdui-snackbar>
+  <script>
+    mdui.setColorScheme("#39C5BB");
+    function a_href(link) {
+      document.querySelector(".loading-snackbar").open = true
+      document.location.href = link
+    }
+    function showInfo(){
+      mdui.alert({
+        headline: "About",
+        description: "SaveVOCALOID.ORG, By SaveVOCALOID.ORG Dev Team."
+      })
+    }
+    function toDocsSite() { //we have this function just bcs my vscode's inline js highlight is cursed
+      a_href("https://docs.savevocaloid.org/")
+    }
+    // const RELEASE = 1722168000;
+    // getTimeStamp = () => {return Math.floor(Date.now()/1000)}
+    // function updateTime(){
+    //     let time = RELEASE - getTimeStamp()
+    //     let days = parseInt(time/86400)
+    //     let hours = parseInt((time%86400)/3600)
+    //     let mins = parseInt(((time%86400)%3600)/60)
+    //     let secs = parseInt(((time%86400)%3600)%60)
+    //     mdui.$("#days")[0].innerText=days
+    //     mdui.$("#hours")[0].innerText=hours
+    //     mdui.$("#mins")[0].innerText=mins
+    //     mdui.$("#secs")[0].innerText=secs
+    // }
+    // updateTime()
+    // setInterval(updateTime, 10)
+  </script>
+
+</body>
+
 </html>
