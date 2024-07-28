@@ -44,10 +44,54 @@
           <p>SaveVOCALOID.ORG 是一个由 VOCALOID 社区发起的项目。</p>
           <p>最近，在国内的网站和平台上，VOCALOID 作品大量地被删除或隐藏。此外，VOCALOID 圈子也出现了过于低龄化等令人担忧的现象。</p>
           <p>我们希望能够尽一份微薄之力，应对 VOCALOID 社区所面临的问题。例如：对 VOCALOID 作品进行存档，以免 P 主和爱好者们的心血毁于网络平台不合理的政策；对 VOCALOID 文化进行适当的科普，以免新人被错误的信息误导。</p>
+          <p>要了解更多信息，请<a onclick="toDocsSite()" href="javascript:;" style="color: lightgreen;">&rightarrow;阅读我们的文档</a>。</p>
           <!--Thanks to 4n0n4me, for such great texts: @gh/xjzh123-->
         </div>
         <br>
     </mdui-card>
+    <br><br>
+    <mdui-card variant="filled" style="width: 95%; height: auto; margin-left: 2.5%;">
+      <br>
+      <center>
+        <h2>我如何帮助你们？</h2>
+      </center>
+      <br>
+      <div style="padding-left:2%; padding-right: 2%; padding-bottom: 2%; text-indent: 2em;">
+        <p>我们接受多种形式的帮助。</p>
+        <p>您可以帮忙撰写文档条目，它的 Github 仓库在 <a href="javascript:;" onclick="toDocsGithubRepo()">SaveVOCALOID-ORG/Docs</a>。</p>
+        <p>如果您不熟悉 Git 的操作，您可以直接将内容投稿到我们的 Bilibili 账号私信或是我们的电子邮箱。</p>
+        <p>或者——把这个站点转发给您的朋友们，这已经足够了。</p>
+      </div>
+      <br>
+  </mdui-card>
+    <br><br>
+    <mdui-card variant="filled" style="width: 95%; height: auto; margin-left: 2.5%;">
+      <br>
+      <center>
+        <h2>捐赠</h2>
+      </center>
+      <br>
+      <div style="padding-left:2%; padding-right: 2%; padding-bottom: 2%; text-indent: 2em;">
+        <p>我们目前<b>不接受</b>捐赠。</p>
+        <p>无疑，运行这样的一个站点是需要成本的，但我们现在没有接受捐赠的条件。</p>
+        <p>在我们进一步完善站点内容后，可能会开放捐赠通道。</p>
+      </div>
+      <br>
+  </mdui-card>
+  <br><br>
+    <mdui-card variant="filled" style="width: 95%; height: auto; margin-left: 2.5%;">
+      <br>
+      <center>
+        <h2>鸣谢列表</h2>
+      </center>
+      <br>
+      <div style="padding-left:2%; padding-right: 2%; padding-bottom: 2%; text-indent: 2em;">
+        <mdui-list>
+          <mdui-list-item headline="4n0n4me" description="提供&完善了部分文本" onclick="toGithubProfile('xjzh123')"></mdui-list-item>
+        </mdui-list>
+      </div>
+      <br>
+  </mdui-card>
   </div>
   <br><br><br>
   <mdui-divider></mdui-divider><br><br>
@@ -58,6 +102,11 @@
     此站点与 YAMAHA Co., Ltd 或 Crypton Future Media, INC. 无关。<br>
     此项目是由 VOCALOID 社区发起的。<br>
     VOCALOID&reg; 是 YAMAHA 的商标。<br>
+    <br>
+    &copy;2024, SaveVOCALOID.ORG Dev Team.<br>
+    Under MIT License.<br>
+    使用 MIT 许可证。
+    <br><br>
   </p>
   <mdui-snackbar class="loading-snackbar">Loading...</mdui-snackbar>
   <script>
@@ -72,8 +121,14 @@
         description: "SaveVOCALOID.ORG, By SaveVOCALOID.ORG Dev Team."
       })
     }
+    function toGithubProfile(name){
+      a_href(`https://github.com/${name}`)
+    }
     function toDocsSite() { //we have this function just bcs my vscode's inline js highlight is cursed
       a_href("https://docs.savevocaloid.org/")
+    }
+    function toDocsGithubRepo(){
+      a_href("https://github.com/SaveVOCALOID-ORG/Docs")
     }
     // const RELEASE = 1722168000;
     // getTimeStamp = () => {return Math.floor(Date.now()/1000)}
